@@ -46,19 +46,19 @@ AddBtn.addEventListener("click", function(){
 
 function BillTotal(){
     // get the value entered in the billType textfield
-    var billTypeEnter = billItemType3.value;
+
     // update the correct total
-    if (billTypeEnter === "call"){
+    if (billItemType3 === "call"){
         callsTotal += callCost
     }
-    else if (billTypeEnter === "sms"){
+    else if (billItemType3 === "sms"){
         smsTotal += smsCost;
     }
     
     //update the totals that is displayed on the screen.
     callTotalSettings.innerHTML = callsTotal.toFixed(2);
     smsTotalSettings.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
+    F_total = callsTotal + smsTotal;
     totalSettings.innerHTML = totalCost.toFixed(2);
     
     //color the total based on the criteria
@@ -70,7 +70,6 @@ function BillTotal(){
         totalSettings.classList.add("warning");
     }
 }
-
 
 
 AddBtn.addEventListener('click', BillTotal);

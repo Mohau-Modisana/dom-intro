@@ -27,7 +27,6 @@ var checkedRadioBtn = document.querySelector(".billItemTypeRadio:checked");
 function RadioBillTotal(){
 
     // get the value entered in the billType textfield
-    var billTypeEntered2 = billItemType
     // update the correct total
     if (billItemType === "call"){
         callsTotal2 += 2.75
