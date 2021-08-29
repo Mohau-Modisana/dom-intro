@@ -40,28 +40,26 @@ updateSettingsbtn.addEventListener("click", function(){
          console.log(critical);
     });
 
-    var RadioBtns = document.querySelector(".rd");
- if (RadioBtns){
-     var billItemType3 = RadioBtns.value;
+    var RadioBtns1 = document.querySelector("input[name='billItemTypeWithSettings']:checked");  
+ if (RadioBtns1 !=null){
+    var billItemType3 = RadioBtns1.value;
  }
-
- var RadioBtns1 = document.querySelector(".rd1");
- if (RadioBtns1){
-     var billItemType4 = RadioBtns1.value;
- }
+ 
 
 function BillTotal(){
   
     console.log(billItemType3);
-    if (billItemType3 === "call"){
+    if (billItemType3 == "call"){
         call_total += callCost;
-        callTotalSettings.innerHTML = call_total;
-    }
-    else if (billItemType4 === "sms"){
-        sms_total += smsCost;
-        smsTotalSettings.innerHTML = sms_total;
-    }
     
+    }
+    else if (billItemType3 == "sms"){
+        sms_total += smsCost;
+    
+    }
+
+    callTotalSettings.innerHTML = call_total;
+    smsTotalSettings.innerHTML = sms_total;
     F_total = call_total + sms_total;
     totalSettings.innerHTML = F_total;
     
@@ -72,8 +70,6 @@ function BillTotal(){
         totalSettings.classList.add("warning");
     }
     
-    console.log(call_total);
-    console.log(sms_total);
 }
 
 AddBtn.addEventListener('click', BillTotal);
