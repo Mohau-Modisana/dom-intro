@@ -1,4 +1,3 @@
-// get a reference to the sms or call radio buttons
 const callsTotalTwoElem = document.querySelector(".callTotalTwo");
 const smsTotalTwoElem = document.querySelector(".smsTotalTwo");
 const totalCostTwoElem = document.querySelector(".totalTwo");
@@ -11,23 +10,24 @@ var smsTotal2 = 0;
 var numsms=0;
 
 
-var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-    if (checkedRadioBtn){
-        var billItemType = checkedRadioBtn.value;
-        // billItemType will be 'call' or 'sms'
-    }
-    console.log(billItemType);
 
 function RadioBillTotal(){
 
-    if (billItemType === "call"){
-        numcall ++;
-        callsTotal2 = numcall*2.75;
+    var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
+
+
+    if (checkedRadioBtn){
+        var billItemType = checkedRadioBtn.value
+        if (billItemType === "call"){
+            numcall ++;
+            callsTotal2 = numcall*2.75;
+        }
+        else if (billItemType === "sms"){
+            numsms ++;
+            smsTotal2 = numsms*0.75;
+        }
     }
-    else if (billItemType === "sms"){
-        numsms ++;
-        smsTotal2 = numsms*0.75;
-    }
+
     
     callsTotalTwoElem.innerHTML = callsTotal2.toFixed(2);
     smsTotalTwoElem.innerHTML = smsTotal2.toFixed(2);
