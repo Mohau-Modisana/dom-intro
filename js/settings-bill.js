@@ -51,11 +51,11 @@ function BillTotal(){
 
         if (billItemType3 === "call"){
             call_num ++;
-            call_total = call_num*2.75;
+            call_total = call_num*callCost;
         }
         else if (billItemType3 === "sms"){
             sms_num ++;
-            sms_total = sms_num*0.75;
+            sms_total = sms_num*smsCost;
         }
 
     }
